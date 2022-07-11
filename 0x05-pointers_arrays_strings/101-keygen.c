@@ -1,29 +1,27 @@
-#include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "main.h"
 
 /**
- * print_number - Prints an integer.
+ * main - entry point
  *
- * @n: The integer to print.
- *
- * Return: void
+ * Return: generated password
  */
 
-void print_number(int n)
+int main(void)
 {
-	unsigned int k = n;
+	char c;
+	int x;
 
-	if (n < 0)
+	srand(time(0));
+	while (x <= 2645)
 	{
-		n *= -1;
-		k = n;
-		_putchar('-');
+		c = rand() % 128;
+		x += c;
+		putchar(c);
 	}
+	putchar(2772 - x);
 
-	k /= 10;
-
-	if (k != 0)
-		print_number(k);
-
-	_putchar((unsigned int) n % 10 + '0');
+	return (0);
 }
